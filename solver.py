@@ -1,3 +1,6 @@
+import cell
+
+cell = cell.cell
 print("hello world")
 
 size = 9
@@ -8,7 +11,7 @@ def initBoard():
     for x in range(size):
         puzzle.append([])
         for y in range(size):
-            puzzle[x].append(0)
+            puzzle[x].append(cell(0))
     return puzzle
 
 #prints a sudoku board
@@ -19,13 +22,13 @@ def printBoard(board):
         for j, col in enumerate(row):
             if j % 3 == 0:
                 print("|", end='')
-            print(col, end=' ')
+            print(col.value, end=' ')
         print("|")
     print("______________________")
     return
 
 def loadValue(x, y, val, board):
-    board[y][x] = val
+    board[y][x].value = val
 
 #loads a sudoku puzzle and prints the board
 puzzle = initBoard()
