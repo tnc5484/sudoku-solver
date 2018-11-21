@@ -30,6 +30,21 @@ def printBoard(board):
 def loadValue(x, y, val, board):
     board[y][x].value = val
 
+def findInRow(rnum, target, board):
+    for col in board[rnum]:
+        if col.value == target:
+            return True
+    return False
+
+def findInCol(cnum, target, board):
+    for i, row in enumerate(board):
+        if board[i][cnum].value == target:
+            return True
+    return False
+
+def solve(board):
+    print("todo")
+
 #loads a sudoku puzzle and prints the board
 puzzle = initBoard()
 loadValue(0,0,2,puzzle)
