@@ -42,6 +42,21 @@ def findInCol(cnum, target, board):
             return True
     return False
 
+def findInSquare(x,y,target,board):
+    intDivX = x//3
+    intDivY = y//3
+
+    minX = 3*intDivX
+    minY = 3*intDivY
+    maxX = 3*(intDivX+1)
+    maxY = 3*(intDivY+1)
+
+    for i in range(minX,maxX):
+        for j in range(minY,maxY):
+            if board[i][j].value == target:
+                return True
+    return False
+
 def solve(board):
     print("todo")
 
